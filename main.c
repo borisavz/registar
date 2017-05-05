@@ -101,8 +101,10 @@ int main(void) {
                 trenutni_radnik = t_radnik;
                 break;
             }
-        } else
+        } else {
             puts("---\nPostoji samo jedan radnik.");
+            break;
+        }
     } while(true);
     printf("---\nDobro dosli, %s\n", trenutni_radnik->ime);
     while(true) {
@@ -151,7 +153,6 @@ int main(void) {
                         for(racun = prva_stavka; racun != NULL; racun = racun->sledeci) {
                             fprintf(stampa_strana, "%s | %d | %.2f | %.2f\n", racun->art->ime, racun->kolicina, racun->art->cena, racun->ukupna_cena);
                             racun->art->zalihe -= racun->kolicina;
-
                         }
                         fprintf(stampa_strana, "\nUkupno: %.2f\n", f);
                         menjao_artikle = true;
