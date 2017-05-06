@@ -285,6 +285,7 @@ int main(void) {
                         trenutni_artikal->cena = f;
                         trenutni_artikal->zalihe = ii;
                         trenutni_artikal->sifra = iiii;
+                        trenutni_artikal->ime = malloc(strlen(ime) * sizeof(char));
                         strcpy(trenutni_artikal->ime, ime);
                         menjao_artikle = true;
                         break;
@@ -376,14 +377,14 @@ int main(void) {
                         strcpy(ime, putanja);
                         strcat(ime, "/stampa.txt");
                         stampa_strana = fopen(ime, "w");
-                        fputs("Test strana\n---\nRegistar v1.0\nBorisav Zivanovic 2017\ngithub.com/borisavz/registar\nborisavzivanovic@gmail.com", stampa_strana);
+                        fputs("Test strana\n---\nRegistar v1.0.2\nBorisav Zivanovic 2017\ngithub.com/borisavz/registar\nborisavzivanovic@gmail.com", stampa_strana);
                         fclose(stampa_strana);
                         system(stampaj);
                         break;
                 }
                 break;
             case 9:
-                puts("---\nRegistar v1.0\nBorisav Zivanovic 2017");
+                puts("---\nRegistar v1.0.2\nBorisav Zivanovic 2017");
                 break;
             case 10:
                 if(hoces_neces("---\nDa li ste sigurni da zelite da izadjete? y/n"))
